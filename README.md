@@ -1,37 +1,54 @@
 # PassForge
 
-An independent Python implementation of FIDO2/WebAuthn identity-server capabilities,
-based on publicly available standards.
+An independent Python implementation of a FIDO2/WebAuthn server, built from the W3C
+WebAuthn and FIDO CTAP specifications. Includes a FastAPI demo app.
 
-> ⚠️ **Pre-alpha. Not for production use.**
+> ⚠️ Pre-alpha. Not for production use.
 
 ## What this is
 
-PassForge implements the server side of FIDO2/WebAuthn: registering credentials and
-verifying authentication assertions, following the W3C and FIDO specifications
-directly. See [PROVENANCE.md](PROVENANCE.md) for how code is written.
+A library that implements WebAuthn registration and authentication (server-side /
+Relying Party only), plus a small FastAPI app demonstrating register/login flows.
 
-## Current phase: Phase 0 — Foundation
+## Plan (4 months)
 
-- [ ] CBOR decoder (CTAP2 canonical form)
-- [ ] COSE key parsing
-- [ ] base64url encode/decode
-- [ ] clientDataJSON handling
-- [ ] WebAuthn L3 §16 test vectors passing
+- **Month 1** — CBOR, COSE, base64url, clientDataJSON parsing
+- **Month 2** — Registration: options + verification (`none`, `packed` attestation)
+- **Month 3** — Authentication: options + verification, signature counter check
+- **Month 4** — Fuzzing, FastAPI demo app, docs, v0.1.0 on PyPI
 
-More capability gets added and documented here as later phases start.
+## Stack
+
+- Python 3.11+
+- FastAPI (demo app + reference integration)
+- `cryptography` (signatures)
+- No other runtime dependencies in the core library
+
+## Quick example (target API, not yet built)
+
+```python
+from fastapi import FastAPI
+from passforge import PassForge
+
+app = FastAPI()
+pf = PassForge(rp_id="example.com", rp_name="Example")
+
+@app.post("/register/options")
+def register_options(user_id: str):
+    return pf.generate_registration_options(user_id)
+
+@app.post("/register/verify")
+def register_verify(response: dict):
+    return pf.verify_registration_response(response)
+```
 
 ## Standards
 
-Pinned versions: [docs/standards/REFERENCES.md](docs/standards/REFERENCES.md)
-
-## Requirements
-
-Python 3.11+
+See [docs/REFERENCES.md](docs/REFERENCES.md).
 
 ## Contributing
 
-See [PROVENANCE.md](PROVENANCE.md) before your first PR.
+See [PROVENANCE.md](PROVENANCE.md).
 
 ## Security
 
@@ -39,4 +56,4 @@ See [SECURITY.md](SECURITY.md).
 
 ## License
 
-Apache License 2.0. See [LICENSE](LICENSE).
+Apache License 2.0.
