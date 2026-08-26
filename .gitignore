@@ -1,0 +1,56 @@
+### JetBrains (PyCharm) ###
+# Covers personal workspace settings, tasks, and data sources.
+.idea/
+*.iml
+*.iws
+
+# Optional: If you want to share specific PyCharm run configurations or dictionary settings with your team,
+# you can negate them like this (uncomment if needed):
+# !.idea/runConfigurations/
+# !.idea/dictionaries/
+
+### Python ###
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Testing and Coverage
+.cache
+.pytest_cache/
+.tox/
+.coverage
+.coverage.*
+htmlcov/
+nosetests.xml
+coverage.xml
+*.cover
+
+# Operating System Specific
+.DS_Store
+Thumbs.db
