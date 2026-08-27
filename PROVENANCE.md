@@ -23,3 +23,30 @@ vectors, academic papers.
   is fine. Reading that library's code to understand *why* is not.
 
 That's it. This file will grow if new questions come up.
+
+## Independent Implementation Principles
+
+PassForge implementations are developed from normative specifications.
+
+Permitted sources:
+
+- W3C specifications
+- FIDO specifications
+- IETF RFCs
+- IANA registries
+- official test vectors
+- academic literature
+- publicly documented protocol examples
+
+Permitted use of other implementations:
+
+- black-box interoperability testing
+- behavioral comparison
+- input/output comparison
+
+Not permitted:
+
+- copying implementation code
+- translating implementation code into Python
+- reproducing implementation structure solely because it exists elsewhere
+- using another implementation as the primary design authority
