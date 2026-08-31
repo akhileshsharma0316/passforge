@@ -93,17 +93,17 @@ Primary normative references:
 The exact specification revision used for each implementation milestone is recorded in the project documentation.
 
 ### Independent Implementation 
-- [PROVENANCE.md](./PROVENANCE.md)
+- [PROVENANCE.md](docs/governance/PROVENANCE.md)
 
 ### Security
 This is a pre-alpha release, threats and vulnerabilities considered. No Guarantees Yet.
-- [Security.md](./Security.md)
+- [Security.md](./SECURITY.md)
 
 ### Roadmap
 ```text
 Foundational -> Registration -> Authentication ->Security/Interoperability
 ```
-For more information - [Tracebility](./Traceability)
+For more information - [Traceability](./docs/standards/TRACEBILITY.md)
 
 ### Contributing
 - [CONTRIBUTING.md](./CONTRIBUTING.md)
