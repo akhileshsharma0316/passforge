@@ -103,7 +103,7 @@ This is a pre-alpha release, threats and vulnerabilities considered. No Guarante
 ```text
 Foundational -> Registration -> Authentication ->Security/Interoperability
 ```
-For more information - [Traceability](./docs/standards/TRACEBILITY.md)
+For more information - [Traceability](docs/standards/TRACEABILITY.md)
 
 ### Contributing
 - [CONTRIBUTING.md](./CONTRIBUTING.md)
