@@ -54,3 +54,24 @@ coverage.xml
 # Operating System Specific
 .DS_Store
 Thumbs.db
+
+### uv ###
+# uv.lock should be committed for reproducible installs — do NOT ignore it
+
+### Type checking / linting caches ###
+.mypy_cache/
+.ruff_cache/
+
+### Alembic / DB ###
+*.sqlite3
+*.db
+
+### Environment secrets ###
+.env.local
+.env.*.local
+
+### Docker ###
+docker-compose.override.yml
+
+### VS Code (if anyone uses it alongside PyCharm) ###
+.vscode/
