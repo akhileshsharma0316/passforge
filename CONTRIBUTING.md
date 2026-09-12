@@ -16,20 +16,19 @@ After MVP release, this section will be updated with guidelines to contribution.
 - PostgreSQL 15+ (via Docker Compose) 
 - Docker
 
-**Setup**
+## Development Setup
 
-```bash
-git clone https://github.com/akhileshsharma0316/passforge.git
-cd passforge
-python -m venv .venv
-pip install -e ".[dev]"
-pre-commit install
-docker compose up -d 
-alembic upgrade head
-pytest
-```
+Prerequisites: Python 3.11+, [uv](https://docs.astral.sh/uv/).
 
-* (Look for consistent updates as the project is in pre-alpha, this section will be updated on a regular basis)
+    git clone https://github.com/akhileshsharma0316/passforge.git
+    cd passforge
+    make dev
+
+Run `make check` before opening a PR (lint + typecheck + test).
+See the `Makefile` for all commands.
+
+*(Database setup via Docker/Alembic will be added to `make dev` once those
+are wired up — for now this covers dependency install and pre-commit.)*
 
 ## Provenance Requirements
 All implementation work must follow [`docs/governance/PROVENANCE.md`](docs/governance/PROVENANCE.md)
